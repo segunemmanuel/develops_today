@@ -72,10 +72,9 @@ Add=>/api/store/comments
 
 
 ```
-‘headers’ => [
-    ‘Accept’ => ‘application/json’,
-    ‘Authorization’ => ‘Bearer ‘.$accessToken,
-]
-
+View live version here
+https://shegz.dev/develops/public/
 ```
+
 Thanks
+
