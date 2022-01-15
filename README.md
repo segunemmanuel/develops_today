@@ -1,15 +1,11 @@
-Laravel Blog Rest API
-<<<<<<< Updated upstream
-Assessment for Develops Today
-=======
-This is a blog rest API project including blog features like category,article,author,comment, search , authentication using PHP Laravel framework & MySQL database.
->>>>>>> Stashed changes
+#Laravel Blog Rest API
+#Assessment for Develops Today
 
-How to use ?
-Follow these steps to get this project live
+#How to use ?
+#Follow these steps to get this project live
 
-git clone https://github.com/segunemmanuel/develops_today.git
-cd laravel-blog-api
+#git clone https://github.com/segunemmanuel/develops_today.git
+#cd laravel-blog-api
 composer install
 
 Configure your .env file
