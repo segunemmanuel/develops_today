@@ -44,5 +44,14 @@ Delete=>/api/delete/comments/{comments}
 Update=> /api/update/comments/{comment}
 Add=>/api/store/comments
     
+You can use Faker for generating random dummy data using the factories defined in this project.Just follow these steps
 
+php artisan tinker
+factory(App\ModelName::class,number_of_column)->create()
+To test this API project you can use Postman application.For authorization purpose you need to add below headers
+
+‘headers’ => [
+    ‘Accept’ => ‘application/json’,
+    ‘Authorization’ => ‘Bearer ‘.$accessToken,
+]
 Thanks
