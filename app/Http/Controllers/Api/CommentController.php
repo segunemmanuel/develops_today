@@ -67,7 +67,9 @@ return response('Inserted successfully');
      */
     public function show($id)
     {
-        //
+
+        $show=DB::table('comments')->where('id',$id)->first();
+        return response()->json($show);
     }
 
     /**
@@ -91,6 +93,20 @@ return response('Inserted successfully');
     public function update(Request $request, $id)
     {
         //
+
+        $validateData=$request->validate([
+            'post_id'=>'required',
+            'author'=>'required',
+
+        ]);
+    $data=array();
+    $data['post_id']=$request->post_id;
+    $data['author-name']=$request->author;
+    $data['created_at']=Carbon::now();
+$insert=DB::table('comments')->where('id',$id)->update($data);
+return response('Updated successfully');
+
+
     }
 
     /**
@@ -102,5 +118,7 @@ return response('Inserted successfully');
     public function destroy($id)
     {
         //
+        DB::table('comments')->where('id',$id)->delete();
+        return response('Deleted');
     }
 }

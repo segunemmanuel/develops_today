@@ -47,7 +47,7 @@ return response()->json($data);
                  'title'=>'required |unique:posts|max:25',
                 'link'=>'required',
                 'author'=>'required',
-                'created_at'=>'required',
+                // 'created_at'=>'required',
             ]);
     $data=array();
     $data['title']=$request->title;
@@ -120,7 +120,6 @@ return response('Updated successfully');
      */
     public function destroy($id)
     {
-        //
             // deleting
             DB::table('posts')->where('id',$id)->delete();
             return response('Deleted');

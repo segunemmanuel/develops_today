@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
 use App\Http\Controllers\Controller;
 use App\Model\Posts;
 use App\Upvote;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
 
 class UpvoteController extends Controller
 {
@@ -41,22 +40,19 @@ return response()->json($data);
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+
+
+    public function store(Request $request)
     {
-
-
-
-    	$data['employees'] = User::where('usertype','employee')->get();
-    	$data['leave_purpose'] = LeavePurpose::all();
-// $data['posts']
-
-
-
+        $data=array();
         $data['votes']=$request->votes;
-        // $data['post_id']=$request->post_id;
-        $post=DB::table('post')->where('id',$id);
-        $insert=DB::table('upvotes')->where('post_id',$id)->insert($data);
-        return response('Inserted data successfully');
+        $data['post_id']=$request->post_id;
+        $data['created_at']=Carbon::now();
+
+        $insert=DB::table('upvotes')->insert($data);
+        return response('Voted successfully');
+
+
 
     }
 
