@@ -7,7 +7,7 @@
 #git clone https://github.com/segunemmanuel/develops_today.git
 #cd laravel-blog-api
 composer install
-
+<code>
 Configure your .env file
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -15,6 +15,7 @@ DB_PORT=3306
 DB_DATABASE=db_name
 DB_USERNAME=db_username
 DB_PASSWORD=db_password
+</code>
 
 Final steps
 php artisan migrate
